@@ -43,6 +43,23 @@ nav ul li a:hover {
     border-bottom: 2px solid #00bcd4;
 }
 
+/* Welcome Section */
+#welcome {
+    background-color: #00bcd4;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+#welcome h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+#welcome p {
+    font-size: 20px;
+}
+
 /* Section Styling */
 .section {
     padding: 80px 20px;
