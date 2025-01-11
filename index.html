@@ -80,6 +80,7 @@
 
             <div v-if="comments.length">
                 <div v-for="(comment, index) in comments" :key="index">
+                    <!-- Only display the comment text, no name -->
                     <p>{{ comment.text }}</p>
                 </div>
             </div>
@@ -104,7 +105,7 @@
                     if (this.newComment.text) {
                         // Push the new comment to the array
                         this.comments.push({ text: this.newComment.text });
-                        
+
                         // Clear the input field after submission
                         this.newComment.text = '';
                     }
