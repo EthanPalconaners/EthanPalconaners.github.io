@@ -15,7 +15,7 @@
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#achievements">Achievements</a></li>
                 <li><a href="#course">Course</a></li>
-                <li><a href="#experience">IT Experience</a></li>
+                <li><a href="#it-experience">IT Experience</a></li>
                 <li><a href="#hobbies">Hobbies</a></li>
                 <li><a href="#goals">Goals</a></li>
                 <li><a href="#gallery">Gallery</a></li>
@@ -25,60 +25,63 @@
     </header>
 
     <main>
+        <!-- About Me Section -->
         <section id="about">
             <h2>About Me</h2>
-            <p>I am Nathaniel Torres Palconan, I live in Las Piñas city with my Mom, and I came to APC to study here due to liking the place and my other options pale in comparison to APC.</p>
+            <p>I am Nathaniel Torres Palconan, I live in Las Pinas city with my Mom, and I came to APC to study here due to liking the place and my other options pale in comparison to APC.</p>
         </section>
 
+        <!-- Achievements Section -->
         <section id="achievements">
             <h2>Achievements</h2>
             <p>I have not much achievements other than being an honored student during 12th grade and below.</p>
         </section>
 
+        <!-- Course Section -->
         <section id="course">
             <h2>Course</h2>
-            <p>I went to BS Computer Science, specializing in Cybersecurity, influenced by my cousin who I look up to.</p>
+            <p>I went to BS computer science, specializing in cybersecurity, influenced by my cousin whom I look up to.</p>
         </section>
 
-        <section id="experience">
+        <!-- IT Experience Section -->
+        <section id="it-experience">
             <h2>IT Experience</h2>
-            <p>Sharing my IT experience, it isn't much—it started when I began making scripts for Roblox. In other words, creating hacks for Roblox.</p>
+            <p>Sharing my IT experience, it isn't much, it was the start when I began making scripts for Roblox, in other words, creating hacks for Roblox.</p>
         </section>
 
+        <!-- Hobbies Section -->
         <section id="hobbies">
             <h2>Hobbies</h2>
-            <p>My hobbies are mostly physical. I love boxing, which I started at 12, though I’ve stopped. Now I currently focus on bodybuilding.</p>
+            <p>My hobbies are mostly physical; I love to box, although I've stopped, but began since I was 12, and now currently starting to do bodybuilding.</p>
         </section>
 
+        <!-- Goals Section -->
         <section id="goals">
             <h2>Goals in Life</h2>
-            <p>Discussing my goals is simple: to be a family man with the love of my life, especially becoming financially stable. That is all I ask for.</p>
+            <p>Discussing my goals is simple: to be a family man of the love of my life, especially becoming financially stable, that is all I ask for.</p>
         </section>
 
+        <!-- Gallery Section -->
         <section id="gallery">
             <h2>Gallery</h2>
-            <div class="gallery">
+            <div class="image-gallery">
                 <img src="images/image1.png" alt="Image 1">
                 <img src="images/image2.png" alt="Image 2">
             </div>
         </section>
 
-        <section id="guestbook" id="app">
+        <!-- Guestbook Section -->
+        <section id="guestbook">
             <h2>Guestbook</h2>
-            <form @submit.prevent="addComment">
-                <label for="name">Name:</label>
-                <input type="text" id="name" v-model="newComment.name" required>
-                <label for="comment">Comment:</label>
-                <textarea id="comment" v-model="newComment.text" rows="4" required></textarea>
+            <form id="comment-form">
+                <input type="text" v-model="newComment.name" placeholder="Your Name" required>
+                <textarea v-model="newComment.text" placeholder="Leave a comment" required></textarea>
                 <button type="submit">Submit</button>
             </form>
             <div v-if="comments.length">
-                <h3>Comments:</h3>
-                <ul>
-                    <li v-for="comment in comments" :key="comment.id">
-                        <strong>{{ comment.name }}</strong>: {{ comment.text }}
-                    </li>
-                </ul>
+                <div v-for="(comment, index) in comments" :key="index">
+                    <p><strong>{{ comment.name }}:</strong> {{ comment.text }}</p>
+                </div>
             </div>
         </section>
     </main>
@@ -89,20 +92,31 @@
 
     <script>
         new Vue({
-            el: "#app",
+            el: '#guestbook',
             data: {
-                newComment: { name: "", text: "" },
+                newComment: {
+                    name: '',
+                    text: ''
+                },
                 comments: []
             },
             methods: {
                 addComment() {
                     if (this.newComment.name && this.newComment.text) {
-                        this.comments.push({
-                            ...this.newComment,
-                            id: Date.now()
+                        this.comments.push({ name: this.newComment.name, text: this.newComment.text });
+                        this.newComment.name = '';
+                        this.newComment.text = '';
+                    }
+                }
+            },
+            watch: {
+                newComment: {
+                    handler: function() {
+                        const form = document.getElementById('comment-form');
+                        form.addEventListener('submit', (event) => {
+                            event.preventDefault();
+                            this.addComment();
                         });
-                        this.newComment.name = "";
-                        this.newComment.text = "";
                     }
                 }
             }
