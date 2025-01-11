@@ -74,14 +74,13 @@
         <section id="guestbook">
             <h2>Guestbook</h2>
             <form @submit.prevent="addComment">
-                <input type="text" v-model="newComment.name" placeholder="Your Name" required>
                 <textarea v-model="newComment.text" placeholder="Leave a comment" required></textarea>
                 <button type="submit">Submit</button>
             </form>
 
             <div v-if="comments.length">
                 <div v-for="(comment, index) in comments" :key="index">
-                    <p><strong>{{ comment.name }}:</strong> {{ comment.text }}</p>
+                    <p>{{ comment.text }}</p>
                 </div>
             </div>
         </section>
@@ -96,19 +95,17 @@
             el: '#guestbook',
             data: {
                 newComment: {
-                    name: '',
                     text: ''
                 },
                 comments: []
             },
             methods: {
                 addComment() {
-                    if (this.newComment.name && this.newComment.text) {
+                    if (this.newComment.text) {
                         // Push the new comment to the array
-                        this.comments.push({ name: this.newComment.name, text: this.newComment.text });
+                        this.comments.push({ text: this.newComment.text });
                         
-                        // Clear the input fields after submission
-                        this.newComment.name = '';
+                        // Clear the input field after submission
                         this.newComment.text = '';
                     }
                 }
