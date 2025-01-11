@@ -38,7 +38,8 @@ main {
 main section {
     margin-bottom: 3rem;
     padding: 1.5rem;
-    background: white;
+    background: black; /* Changed background color to black */
+    color: white; /* Ensures text is visible */
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
