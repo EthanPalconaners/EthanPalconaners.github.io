@@ -1,107 +1,100 @@
-/* General Styles */
+/* General Styling */
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
     margin: 0;
     padding: 0;
-    background: #f4f4f4;
-    color: #333;
+    line-height: 1.6;
+    color: black; /* Ensure all text is black */
+    background-color: #f4f4f4; /* Reverted to light background */
 }
 
 header {
     background: #007acc;
-    color: white;
-    padding: 1rem 0;
+    color: white; /* Header text stays white for contrast */
     text-align: center;
+    padding: 1.5rem 0;
 }
 
-header nav ul {
-    list-style: none;
-    padding: 0;
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: black; /* Changed "Welcome to My Profile" text to black */
 }
 
-header nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-header nav ul li a {
+header p {
+    margin: 0.5rem 0 0;
+    font-size: 1.2rem;
     color: white;
-    text-decoration: none;
-    font-weight: bold;
 }
 
 main {
     padding: 2rem;
 }
 
-main section {
-    margin-bottom: 3rem;
-    padding: 1.5rem;
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+section {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    color: black; /* Section headings (About Me, Achievements, etc.) are black */
+    margin-bottom: 1rem;
+}
+
+p {
+    color: black; /* Paragraph text is black */
+    margin: 0.5rem 0;
 }
 
 footer {
+    background: #333;
+    color: white; /* Footer text remains white */
     text-align: center;
     padding: 1rem 0;
-    background: #007acc;
-    color: white;
-}
-
-/* Gallery Styles */
-.gallery {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.gallery-image {
-    width: 350px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.gallery-image:hover {
-    transform: scale(1.05);
-}
-
-/* Guestbook Styles */
-textarea {
+    position: relative;
+    bottom: 0;
     width: 100%;
-    height: 80px;
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
+}
+
+#guestbook {
+    background-color: #e9ecef;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: black; /* Form labels are black */
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
     border-radius: 5px;
 }
 
-button {
+form button {
     background: #007acc;
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 0.5rem 1rem;
     cursor: pointer;
-}
-
-button:hover {
-    background: #005f99;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    background: #f9f9f9;
-    margin: 5px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
     border-radius: 5px;
+}
+
+form button:hover {
+    background: #005fa3;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    display: inline-block;
 }
