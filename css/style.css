@@ -1,115 +1,91 @@
-/* General Styling */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f0f0f0;  /* Light gray background */
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-    color: black;
-    background-color: #f0f0f0; /* Light gray for background */
 }
 
 header {
-    background: #007acc;
+    background-color: #333;
     color: white;
+    padding: 10px 0;
     text-align: center;
-    padding: 1.5rem 0;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2.5rem;
+    font-size: 2em;
 }
 
 nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
+    list-style-type: none;
     padding: 0;
-    margin: 1rem 0 0;
 }
 
-nav li {
-    margin: 0 1rem;
+nav ul li {
+    display: inline;
+    margin: 0 10px;
 }
 
-nav a {
-    text-decoration: none;
+nav ul li a {
     color: white;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: #ffcc00;
+    text-decoration: none;
 }
 
 main {
-    padding: 2rem;
-}
-
-section {
-    margin-bottom: 2rem;
+    padding: 20px;
 }
 
 h2 {
-    color: black;
-    margin-bottom: 1rem;
+    color: black;  /* Make all section titles black */
 }
 
-p {
-    color: black;
-    margin: 0.5rem 0;
+section {
+    background-color: white;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+section p {
+    color: black;  /* Ensure paragraph text is black */
 }
 
-#guestbook {
-    background-color: #f9f9f9;
-    padding: 1rem;
-    border-radius: 8px;
+.image-gallery img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    border-radius: 5px;
 }
 
-form label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
+form {
+    display: flex;
+    flex-direction: column;
 }
 
 form input, form textarea {
-    width: 100%;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
+    padding: 10px;
+    margin-bottom: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
 
 form button {
-    background: #007acc;
+    padding: 10px;
+    background-color: #333;
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 form button:hover {
-    background: #005fa3;
+    background-color: #555;
 }
 
-.gallery img {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    margin: 10px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    display: inline-block;
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
 }
