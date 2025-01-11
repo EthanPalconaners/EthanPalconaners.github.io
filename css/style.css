@@ -10,7 +10,7 @@ body {
 
 header {
     background: #007acc;
-    color: black; /* Changed text to black */
+    color: black; /* Text is now black */
     text-align: center;
     padding: 1.5rem 0;
 }
@@ -34,17 +34,18 @@ section {
 }
 
 h2 {
-    color: black; /* Ensure section headings are visible */
+    color: black; /* Section headings are black */
     margin-bottom: 1rem;
 }
 
 p {
+    color: black; /* Paragraph text is black */
     margin: 0.5rem 0;
 }
 
 footer {
     background: #333;
-    color: white;
+    color: white; /* Footer text remains white */
     text-align: center;
     padding: 1rem 0;
     position: relative;
@@ -62,6 +63,7 @@ form label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: bold;
+    color: black; /* Form labels are black */
 }
 
 form input, form textarea {
